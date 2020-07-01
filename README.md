@@ -1,5 +1,5 @@
 # PAYDAY 2 auto-updating mod example
-This is an example mod for PAYDAY 2 that does nothing by itself. Instead, it showcases the ability to use Github Actions to automatically build zip archives of your mods and have users automatically download these.
+This is an example mod for PAYDAY 2 SuperBLT that does nothing by itself. Instead, it showcases the ability to use Github Actions to automatically build zip archives of your mods and have users automatically download these.
 
 # Setup
 Download or clone this repo. Copy the entire .github folder to your own project's root folder, and modify the sample meta.json and releases.yml as you see fit.
@@ -14,3 +14,13 @@ This action will delete any existing releases and make a new one, where it will 
 Copy the direct download link for your mod's zip, and put it inside `.github/meta.json`. Copy the direct download link for your release's meta.json file, and put it in the updates section of your mod.txt file.
 
 Commit and push these changes again, and your mod should be ready to go! Any pushes to master will immediately be zipped and made available to users ingame. Github will zip your mod for you and calculate a new hash.
+
+# Dealing with line endings
+Line endings may or may not (probably not) negatively affect the way the hashing works, which might endlessly pester your users with non-existent updates.
+If this happens to you, copy the provided `.gitattributes` file into your own repository to prevent Git from messing with your line endings.
+
+# Misc Info
+The included SuperBLT hash calculator was made by fragtrane: https://github.com/fragtrane/Python-SuperBLT-Hash-Calculator
+7-Zip by Igor Pavlov: https://www.7-zip.org/
+
+7-zip is included and has to be used because SuperBLT's unzipper is incompatible with Powershell's `Compress-Archive` or the `tar` command.
