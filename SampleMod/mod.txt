@@ -10,7 +10,7 @@
 		{
 			"identifier" : "pd2_sample_autoupdate",
 			"host" : {
-				"meta" : "https://github.com/HugoZink/PD2AutoUpdateExample/releases/download/refs%2Fheads%2Fmaster/meta.json",
+				"meta" : "https://github.com/HugoZink/PD2AutoUpdateExample/releases/download/refs%2Fheads%2Fmaster/meta.json"
 			}
 		}
 	]
