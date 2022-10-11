@@ -49,7 +49,6 @@ jobs:
         filename: "./SampleMod/mod.txt"
         # The prefix for variables.
         prefix: "mod"
-
     - name: Update version number in meta file
       id: create_meta_file_v2
       run: |
