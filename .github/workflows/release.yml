@@ -39,10 +39,21 @@ jobs:
         asset_path: ./pd2autoupdatexample.zip
         asset_name: pd2autoupdatexample.zip
         asset_content_type: application/zip
-    - name: Hash mod and create mod meta file
-      id: create_meta_file
+    - name: JSON to variables
+      # see https://github.com/antifree/json-to-variables
+      # You may pin to the exact commit or the version.
+      # uses: antifree/json-to-variables@cc8c6394031e145c90f7f9ec909d83df92431fb8
+      uses: antifree/json-to-variables@v1.0.1
+      with:
+        # The json file.
+        filename: "./SampleMod/mod.txt"
+        # The prefix for variables.
+        prefix: "mod"
+
+    - name: Update version number in meta file
+      id: create_meta_file_v2
       run: |
-         $(cat .\.github\meta.json).Replace("%HASH%", $(./.github/hash.exe "./SampleMod").Substring(17)) > ./meta.json
+        $(cat .\.github\meta.json).Replace("%VERSION%", ${{ env.mod_version }}) > ./meta.json
     - name: Upload meta file to Release
       id: upload-meta-asset 
       uses: actions/upload-release-asset@v1

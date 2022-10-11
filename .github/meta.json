@@ -1,7 +1,7 @@
 [
     {
         "ident" : "pd2_sample_autoupdate",
-        "hash" : "%HASH%",
+        "version" : "%VERSION%",
         "patchnotes_url" : "https://example.com/other-patchnotes.html",
         "download_url" : "https://github.com/HugoZink/PD2AutoUpdateExample/releases/download/refs%2Fheads%2Fmaster/pd2autoupdatexample.zip"
     }
